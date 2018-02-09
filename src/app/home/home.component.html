@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="md-col-6">
+            <h1> welcome Home!</h1>
+            <h3> {{'My'}} name is {{getName()}} and I'm {{age}} </h3>
+            <button class="btn btn-primary"
+            [disabled]="!allowClick"
+            (click)="onButtonClicked()">
+                click Me
+            </button>
+            <!--<h2>{{allowClick}}</h2> String interpolation-->
+            <h2 [innerText]="allowClick"></h2> <!--property binding-->
+            <h3 *ngIf="buttonClicked" >{{ btnClick }}</h3>
+            <!--<ng-template #secondP>
+              <p>button is not clicked </p>
+            </ng-template>-->
+            <!--<input type="text" (input)="onInputChange($event)">-->
+            <input type= "text" [(ngModel)]="lastName">
+            <P>{{ lastName }}</P>
+            <app-test *ngFor="let t of tests"></app-test>
+            <p *ngFor="let t of tests; let i = index"> {{'test'+(i+1)}} </p>
+
+        </div>
+    </div>
+</div>
